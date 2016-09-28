@@ -26,16 +26,6 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
 	private ProductDao productDao;
 	
-	public Page<Product> findProductByCurrentPage(int currentPage, int pageSize) {
-		
-		Pageable pb = new PageRequest(currentPage - 1, pageSize,
-				Sort.Direction.ASC, "productId");
-		Page<Product> page = productDao.findAll(pb);
-		
-		return page;
-	}
-
-
 	@Override
 	public Page<Product> findProductBySearch(int currentPage, int pageSize,
 			final String pTitle, final String dStatus) {
@@ -63,21 +53,8 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	@Override
-	public Product saveProduct(Product product) {
-		
-		return productDao.save(product);
-	}
-
-	@Override
 	public Product findProductById(String productId) {
 		
 		return productDao.findOne(productId);
 	}
-
-	@Override
-	public void deleteProduct(String productId) {
-		
-		productDao.delete(productId);
-	}
-
 }
