@@ -2,7 +2,7 @@
     <wb-module deploy-name="gzpy_manage">
         <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="gzpy_manage"/>
         <property name="java-output-path" value="/gzpy_manage/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="/gzpy_index"/>
     </wb-module>
 </project-modules>
