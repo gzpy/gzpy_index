@@ -25,15 +25,6 @@
 	<mvc:default-servlet-handler/>
 	
 	<!-- 定义无需Controller的url<->view直接映射 -->
-	<mvc:view-controller path="/" view-name="index.jsp"/>
-	
-	<!-- 配置 文件上传的支持 -->
-	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<!-- max upload size in bytes(1G) -->
-		<!-- <property name="maxUploadSize" value="1073741824" /> -->
-		<property name="resolveLazily" value="true" />
-		<!-- max size of file in memory (in bytes 10MB) -->
-		<property name="maxInMemorySize" value="10485760" />
-	</bean>
+	<mvc:view-controller path="/" view-name="default.jsp"/>
 	
 </beans>
