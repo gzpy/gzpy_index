@@ -57,8 +57,9 @@
               
               <li style="z-index: 99;"> <a href="jiejue.html" class="jiejue"><font face="微软雅黑">解决方案</font></a>
                 <ul style="top: 40px; visibility: visible; left: 0px; width: 240px; display: none;">
-                  <li> <a href="wanggehua_jiejue.html" class="asd">社区网格化解决方案</a> </li>
-                  <li> <a href="danwei_jiejue.html" class="asd">重点单位管理解决方案</a> </li>
+                 <c:forEach items="${projectList}" var="project" begin="0" end="1" step="1">
+                   <li> <a href="${ctx}/project/goJJFA.do?projectId=${project.projectId}" class="asd">${project.projectTitle}</a> </li>
+                 </c:forEach>
                 </ul>
               </li>
               
@@ -144,11 +145,12 @@
 		</div>
 		
 	    <div class="anli_content_box">
-		  <div class="anli_content_left">
+	    <c:forEach items="${projectList}" var="project" begin="0" end="1" step="1"> 
+	         <c:set var="imagePath" value="${fn:split(project.imagePath, ',')[0]}"/>
+		 <div class="anli_content_left">
 	  		<div class="anli_conten_l_p">
-		    	<img src="${ctx }/css_files/image040-17144454578.jpg" height="100" width="103" />			
-		    </div>
-			
+		    	<img src="/gzpy_manage${imagePath}" height="100" width="103" />	
+		    </div>	    
 			<div class="anli_content_l_box">        
 				<div class="anli_content_l_box_t">
 			  		<div class="anli_jia">
@@ -156,20 +158,21 @@
 					</div>
 					
 				    <div class="anli_t_title">
-						<font face="微软雅黑">社区网格化解决方案</font>
+						<font face="微软雅黑">${project.projectTitle}</font>
 					</div>
 				</div>
 				  
 				 <div class="anli_text">
-				  	社区网格化解决方案1.系统概述为推进云计算和物联网技术在消防领域的应用，响应公安部消防局提出“消防安全人防与技防并举”的措施。通过“消防安全监管云指…
+				  	${project.introduction}
 				 </div>
 				  
 			     <div class="anli_xiangqing">
-				  	<a class="a1" href="wanggehua_jiejue.html">[点击查看详情]</a>
+				  	<a class="a1" href="${ctx}/project/goJJFA.do?projectId=${project.projectId}">[点击查看详情]</a>
 				 </div>
 			</div>  
 		  </div>
-		  <div class="anli_content_left">
+		 </c:forEach>
+		 <!--  <div class="anli_content_left">
 	  	  	<div class="anli_conten_l_p">
 		    	<img src="${ctx }/css_files/-11264885041.jpg" height="100" width="103"/>		
 		   	</div>
@@ -179,7 +182,6 @@
 		  		<div class="anli_jia">
 					<img src="${ctx }/css_files/anli_jia.jpg"/>
 				</div>
-				
 			    <div class="anli_t_title">
 					<font face="微软雅黑">重点单位管理解决方案</font>
 				</div>
@@ -192,8 +194,8 @@
 		      <div class="anli_xiangqing">
 			  		<a class="a1" href="danwei_jiejue.html">[点击查看详情]</a>
 			  </div>
-		    </div> 
-		  </div>		
+		    </div>   
+		 </div>	-->
 		</div>		
 	  </div>
 	  

@@ -3,6 +3,8 @@ package com.gzpy.common;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,6 +15,8 @@ import com.gzpy.news.service.NewsService;
 import com.gzpy.news.service.NewsTypeService;
 import com.gzpy.product.entity.Product;
 import com.gzpy.product.service.ProductService;
+import com.gzpy.project.entity.Project;
+import com.gzpy.project.service.ProjectService;
 
 @Controller
 @RequestMapping("/index")
@@ -26,10 +30,15 @@ public class IndexController {
 
 	@Autowired
 	private NewsTypeService newsTypeService;
+	
+	@Resource
+	ProjectService projectService;
 
 	@RequestMapping("/toIndex.do")
 	public String toIndex(ModelMap map) {
-
+		List<Project> projectList=projectService.projectfindBydelstatus();
+	    map.addAttribute("projectList",projectList);
+	    
 		List<Product> list_product = productService.findProductByStatus("%",
 				"N");
 
