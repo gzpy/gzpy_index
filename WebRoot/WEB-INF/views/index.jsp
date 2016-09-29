@@ -38,22 +38,20 @@
         <div id="navigation">
           <div id="smoothmenu1" class="ddsmoothmenu">
             <ul>
-              <li><a style="background:none;" href="index.html"><font color="#0000FF" face="微软雅黑">首页</font></a></li>
+              <li><a style="background:none;" href="${ctx }/index/toIndex.do"><font color="#0000FF" face="微软雅黑">首页</font></a></li>
               
-              <li style="z-index: 96;"> <a href="news.html" class=""><font face="微软雅黑">新闻资讯</font></a>
+              <li style="z-index: 96;"> <a href="${ctx }/news/toNewsCenter.do" class=""><font face="微软雅黑">新闻资讯</font></a>
                 <ul style="top: 40px; visibility: visible; left: 0px; width: 90px; display: none;">
-                    <li> <a href="gs_news.html">公司新闻</a> </li>
-                    <li> <a href="hy_news.html">行业动态</a> </li>
+                    <li> <a href="${ctx }/news/toNews.do?type=gs">公司新闻</a> </li>
+                    <li> <a href="${ctx }/news/toNews.do?type=hy">行业动态</a> </li>
                 </ul>
               </li>
               
-              <li style="z-index: 100;"> <a href="product.html" class="product_bg"><font face="微软雅黑">产品中心</font></a>
+              <li style="z-index: 100;"> <a href="${ctx }/product/toProductCenter.do" class="product_bg"><font face="微软雅黑">产品中心</font></a>
                 <ul style="top: 40px; visibility: visible; left: 0px; width: 200px; display: none;">
-                    <li> <a href="wanggehua.html" class="qwe">网格化管理系统</a> </li>
-                    <li> <a href="zhongdiandanwei.html" class="qwe">重点单位管理系统</a> </li>
-                    <li> <a href="96119.html" class="qwe">96119投诉举报系统</a> </li>
-
-
+                   	<c:forEach items="${list_product }" var="product"> 
+                   		 <li> <a href="${ctx }/product/toProductDetail.do?productId=${product.productId}" class="qwe">${product.productTitle}</a> </li>
+                   	</c:forEach>
                 </ul>
               </li>
               
@@ -103,7 +101,7 @@
     <div id="inner" style="width:1200px;text-align:center;margin:5px auto;">
         <div class="hot-event">
         	<div class="event-item">
-                <a target="_blank" href="#" class="banner">
+                <a href="#" class="banner">
                     <img src="${ctx }/css_files/10360729053.jpg" class="photo" style="width:100%; height: 467px;" alt="banner"/>
                 </a>
             </div>
@@ -112,7 +110,7 @@
     <div id="Div1" style="width:1200px;text-align:center;margin:5px auto;">
         <div class="hot-event">
         	<div class="event-item">
-                <a target="_blank" href="#" class="banner">
+                <a target="_blank" href="${ctx }/product/toProductDetail.do?productName=wgh" class="banner">
                     <img src="${ctx }/css_files/10360847943.jpg" class="photo" style="width:100%; height: 467px;" alt="banner"/>
                 </a>
             </div>
@@ -121,7 +119,7 @@
     <div id="Div3" style="width:1200px;text-align:center;margin:5px auto;">
         <div class="hot-event">
         	<div class="event-item">
-                <a target="_blank" href="#" class="banner">
+                <a target="_blank" href="${ctx }/product/toProductDetail.do?productName=zddw" class="banner">
                     <img src="${ctx }/css_files/10360968484.jpg" class="photo" style="width:100%; height: 467px;" alt="banner"/>
                 </a>
             </div>
@@ -130,7 +128,7 @@
 	 <div id="Div3" style="width:1200px;text-align:center;margin:5px auto;">
         <div class="hot-event">
         	<div class="event-item">
-                <a target="_blank" href="#" class="banner">
+                <a target="_blank" href="${ctx }/product/toProductDetail.do?productName=96119" class="banner">
                     <img src="${ctx }/css_files/首页4.jpg" class="photo" style="width:100%; height: 467px;" alt="banner"/>
                 </a>
             </div>
@@ -203,17 +201,15 @@
 		<div class="news_box_title">
 			<img src="${ctx }/css_files/news_inex_title_bg.jpg" usemap="#Map2" border="0" />
             <map name="Map2" id="Map2">
-            	<area shape="rect" coords="355,15,399,32" href="news.html"/>
+            	<area shape="rect" coords="355,15,399,32" href="${ctx }/news/toNewsCenter.do"/>
             </map>
 		</div>
 		
 	    <div class="new_index_liebiao">
 		   <ul>
-           	  <li><a href="gs_newsShow_1.html"><span>「公司新闻」现诚招全国授权区域…</span><b>2016/7/30 11:34:00</b></a></li>
-           	  <li><a href="gs_newsShow_2.html"><span>「公司新闻」重庆市知识产权局、…</span><b>2016/7/5 10:23:00</b></a></li>
-           	  <li><a href="hy_newsShow_1.html"><span>「行业新闻」公司迎发展新契机 …</span><b>2016/6/21 9:22:52</b></a></li>
-           	  <li><a href="gs_newsShow_3.html"><span>「公司新闻」重庆市九龙坡区政协…</span><b>2016/6/1 10:16:50</b></a></li>
-           	  <li><a href="gs_newsShow_4.html"><span>「公司新闻」公司“智慧消防”管…</span><b>2016/5/12 16:00:58</b></a></li> 
+		   	  <c:forEach items="${list_news }" var="news">
+		   	  	<li><a href="${ctx }/news/toNewsDetail.do?newsId=${news.newsId}"><span>「${news.typeName}」${news.shortTitle}…</span><b>${news.issueDate }</b></a></li>
+		   	  </c:forEach>
             </ul>
 		</div>
 	  </div>

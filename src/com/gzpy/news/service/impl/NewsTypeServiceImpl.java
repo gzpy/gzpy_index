@@ -9,10 +9,6 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,64 +25,53 @@ public class NewsTypeServiceImpl implements NewsTypeService {
 	private NewsTypeDao newsTypeDao;
 
 	@Override
-	public Page<NewsType> findNewsTypeByCurrentPage(int currentPage,
-			int pageSize) {
-
-		Pageable pb = new PageRequest(currentPage - 1, pageSize,
-				Sort.Direction.ASC, "typeId");
-		Page<NewsType> page = newsTypeDao.findAll(pb);
-
-		return page;
-	}
-
-	@Override
-	public Page<NewsType> findNewsTypeBySearch(int currentPage, int pageSize,
-			final String tName, final String dStatus) {
-
+	public List<NewsType> findAllNewsType() {
+		
 		Specification<NewsType> spec = new Specification<NewsType>() {
-
+			
 			@Override
-			public Predicate toPredicate(Root<NewsType> root,
-					CriteriaQuery<?> query, CriteriaBuilder cb) {
-
-				Path<String> typeName = root.get("typeName");
-				Path<String> delStatus = root.get("delStatus");
-
-				Predicate name = cb.like(typeName, tName);
-				Predicate status = cb.like(delStatus, dStatus);
-
-				query.where(cb.and(name, status));
-
+			public Predicate toPredicate(Root<NewsType> root, CriteriaQuery<?> query,
+					CriteriaBuilder cb) {
+				
+				Path<String> delStatus = root.get("delStatus") ;
+				
+				Predicate status = cb.equal(delStatus,"N");
+				query.where(cb.and(status));
+				
 				return query.getRestriction();
 			}
 		};
-
-		Pageable pb = new PageRequest(currentPage - 1, pageSize,
-				Sort.Direction.ASC, "typeId");
-
-		return newsTypeDao.findAll(spec, pb);
+		
+		return newsTypeDao.findAll(spec);
 	}
 
 	@Override
-	public NewsType saveNewsType(NewsType newsType) {
-
-		return newsTypeDao.save(newsType);
+	public NewsType findNewsTypeByName(final String tName) {
+		
+		Specification<NewsType> spec = new Specification<NewsType>() {
+			
+			@Override
+			public Predicate toPredicate(Root<NewsType> root, CriteriaQuery<?> query,
+					CriteriaBuilder cb) {
+				
+				Path<String> delStatus = root.get("delStatus");
+				Path<String> typeName = root.get("typeName");
+				
+				Predicate status = cb.equal(delStatus,"N");
+				Predicate name = cb.equal(typeName, tName);
+				query.where(cb.and(status,name));
+				
+				return query.getRestriction();
+			}
+		};
+		
+		return newsTypeDao.findOne(spec);
 	}
 
 	@Override
 	public NewsType findNewsTypeById(String typeId) {
-
+		
 		return newsTypeDao.findOne(typeId);
-	}
-
-	@Override
-	public void deleteNewsType(String typeId) {
-		newsTypeDao.delete(typeId);
-	}
-
-	@Override
-	public List<NewsType> findAllNewsType() {
-		return newsTypeDao.findAll();
 	}
 
 }

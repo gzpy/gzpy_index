@@ -29,16 +29,6 @@ public class NewsServiceImpl implements NewsService {
 	private NewsDao newsDao;
 
 	@Override
-	public Page<News> findNewsByCurrentPage(int currentPage, int pageSize) {
-
-		Pageable pb = new PageRequest(currentPage - 1, pageSize,
-				Sort.Direction.ASC, "newsId");
-		Page<News> page = newsDao.findAll(pb);
-
-		return page;
-	}
-
-	@Override
 	public Page<News> findNewsBySearch(int currentPage, int pageSize,
 			final String nTitle, final String dStatus) {
 
@@ -61,17 +51,11 @@ public class NewsServiceImpl implements NewsService {
 		};
 
 		Pageable pb = new PageRequest(currentPage - 1, pageSize,
-				Sort.Direction.ASC, "newsId");
+				Sort.Direction.DESC, "issueDate");
 
 		return newsDao.findAll(spec, pb);
 	}
-
-	@Override
-	public News saveNews(News news) {
-
-		return newsDao.save(news);
-	}
-
+	
 	@Override
 	public News findNewsById(String newsId) {
 
@@ -79,15 +63,15 @@ public class NewsServiceImpl implements NewsService {
 	}
 
 	@Override
-	public void deleteNews(String newsId) {
-
-		newsDao.delete(newsId);
-	}
-
-	@Override
 	public List<News> findNewsByType(String typeId) {
 
 		return newsDao.findNewsByType(typeId);
+	}
+
+	@Override
+	public List<News> findNewsByStatus(String delStatus,List<String> typeIds) {
+		
+		return newsDao.findNewsByStatus(delStatus,typeIds);
 	}
 
 }

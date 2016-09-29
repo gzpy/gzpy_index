@@ -9,14 +9,6 @@ import com.gzpy.news.entity.News;
 public interface NewsService {
 	
 	/**
-	 * 分页查找所有文章
-	 * @param currentPage
-	 * @param pageSize
-	 * @return
-	 */
-	public Page<News> findNewsByCurrentPage(int currentPage,int pageSize);
-	
-	/**
 	 * 按关键字查找文章，分页
 	 * @param currentPage
 	 * @param PageSize
@@ -25,12 +17,6 @@ public interface NewsService {
 	 * @return
 	 */
 	public Page<News> findNewsBySearch(int currentPage,int pageSize,String nTitle,String dStatus);
-	/**
-	 * 保存文章
-	 * @param news
-	 * @return
-	 */
-	public News saveNews(News news);
 	
 	/**
 	 * 按Id查找文章
@@ -47,8 +33,9 @@ public interface NewsService {
 	public List<News> findNewsByType(String typeId);
 	
 	/**
-	 * 删除文章
-	 * @param newsId
+	 * 按删除状态查找文章
+	 * @param delStatus
+	 * @return
 	 */
-	public void deleteNews(String newsId);
+	public List<News> findNewsByStatus(String delStatus,List<String> typeIds);
 }

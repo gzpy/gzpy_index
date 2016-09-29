@@ -1,5 +1,7 @@
 package com.gzpy.product.service.impl;
 
+import java.util.List;
+
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Path;
@@ -56,5 +58,11 @@ public class ProductServiceImpl implements ProductService{
 	public Product findProductById(String productId) {
 		
 		return productDao.findOne(productId);
+	}
+
+	@Override
+	public List<Product> findProductByStatus(String pTilte, String delStatus) {
+		
+		return productDao.findProductByStatus(pTilte, delStatus);
 	}
 }

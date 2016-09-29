@@ -25,9 +25,20 @@ public class News implements Serializable{
 	@Column(name = "newsTitle")
 	private String newsTitle; //文章标题
 	
+	@Transient
+	private String shortTitle;
+	
+	public String getShortTitle() {
+		return shortTitle;
+	}
+
+	public void setShortTitle(String shortTitle) {
+		this.shortTitle = shortTitle;
+	}
+
 	@Column(name = "issueDate")
 	private Date issueDate;//发布时间
-	
+
 	@Column(name = "newsContent")
 	private String newsContent;//文章内容
 	
