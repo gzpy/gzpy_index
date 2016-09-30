@@ -11,4 +11,5 @@ public interface RemarkService {
 	public Page findRemarkBySearch(int currentpage, int size,String name,String status);
 	public Page findRemarkByDelStatus(int currentpage,int size);
 	public Remark delRemarkById(String remarkId);
+	public Remark saveRemark(Remark remark);
 }

@@ -88,4 +88,8 @@ public class RemarkServiceImpl implements RemarkService{
 		return remarkDao.updateRemark(remark);
 	}
 	
+	public Remark saveRemark(Remark remark){
+	   return remarkDao.save(remark);
+	}
+	
 }

@@ -55,7 +55,7 @@
                 </ul>
               </li>
               
-              <li style="z-index: 99;"> <a href="jiejue.html" class="jiejue"><font face="微软雅黑">解决方案</font></a>
+              <li style="z-index: 99;"> <a href="${ctx}/project/goJJFAAll.do" class="jiejue"><font face="微软雅黑">解决方案</font></a>
                 <ul style="top: 40px; visibility: visible; left: 0px; width: 240px; display: none;">
                  <c:forEach items="${projectList}" var="project" begin="0" end="1" step="1">
                    <li> <a href="${ctx}/project/goJJFA.do?projectId=${project.projectId}" class="asd">${project.projectTitle}</a> </li>
@@ -72,7 +72,7 @@
               </li>
               
               <li style="z-index: 97;">
-                <a href="liuyan.html" flag="88" class=""><font face="微软雅黑">在线留言</font></a>
+                <a href="${ctx}/remark/goRemark.do" flag="88" class=""><font face="微软雅黑">在线留言</font></a>
               </li>
               
               <li style="z-index: 95;">

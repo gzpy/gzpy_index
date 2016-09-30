@@ -30,7 +30,7 @@ public class ProjectAction{
 	@RequestMapping("/goJJFAAll.do")
 	public String goJJFAAll(ModelMap map){
 		List<Project> projectList=projectService.projectfindBydelstatus();
-		map.addAttribute("project",projectList);
+		map.addAttribute("projectList",projectList);
 		return "project/jiejue.jsp";
 	}
 }

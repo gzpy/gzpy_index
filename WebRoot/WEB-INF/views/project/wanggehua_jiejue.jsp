@@ -8,20 +8,21 @@
 <%@ include file="/include.inc.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
 <link href="${ctx}/css_files/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="${ctx}/css_files/jquery-1.8.0.min.js"></script>
 <script src="${ctx}/css_files/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="${ctx}/css_files/common.js" type="text/javascript"></script>
-</head>
-<body>
+
+
 <title>广州品韵信息科技有限公司官方网站</title>
 <meta name="author" content="广州品韵信息科技有限公司">
 <meta name="copyright" content="广州品韵信息科技有限公司">
 <meta name="company" content="广州品韵信息科技有限公司">
 
 <script src="${ctx}/css_files/common.js" type="text/javascript"></script>
-
-
+</head>
+<body>
 <div class="top">
   <div class="topbox">
     <div class="logo"> <img src="${ctx }/css_files/logo.jpg"> </div>
@@ -31,7 +32,7 @@
         <div id="navigation">
           <div id="smoothmenu1" class="ddsmoothmenu">
             <ul>
-              <li><a style="background:none;" href="index.html"><font color="#0000FF" face="微软雅黑">首页</font></a></li>
+              <li><a style="background:none;" href="${ctx}/index/toIndex.do"><font color="#0000FF" face="微软雅黑">首页</font></a></li>
               
               <li style="z-index: 96;"> <a href="news.html" class=""><font face="微软雅黑">新闻资讯</font></a>
                 <ul style="top: 40px; visibility: visible; left: 0px; width: 90px; display: none;">
@@ -98,7 +99,7 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 <!--
 <div class="demo_banner"><img src="${ctx }/css_files/demo_banner7.jpg" width="100%" height="355px"></div>
 -->
-<div id="inner" style="width:1200px;text-align:center;margin:5px auto;">
+<div id="inner" style="width:1200px;text-align:center;margin:5px auto;height: 355px;">
         <div class="hot-event">
         	<div class="event-item">
      
@@ -130,8 +131,8 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 
 
       </div>
-      <div class="intermap">当前位置:<a href="index.html" class="a3">首页</a>&gt;&gt;
-                <a href="jiejue.html" class="a3">解决方案
+      <div class="intermap">当前位置:<a href="${ctx}/index/toIndex.do" class="a3">首页</a>&gt;&gt;
+                <a href="${ctx}/project/goJJFAAll.do " class="a3">解决方案
         
 
         </a>&gt;&gt;<font color="#FF0000">${project.projectTitle}</font>
@@ -159,17 +160,6 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
   </div>
 </div>
 
-
-
-
-
-
-<title>广州品韵信息科技有限公司官方网站</title>
-<meta name="author" content="广州品韵信息科技有限公司">
-<meta name="copyright" content="广州品韵信息科技有限公司">
-<meta name="company" content="广州品韵信息科技有限公司">
-
-<script src="${ctx }/css_files/common.js" type="text/javascript"></script>
 
 
 
