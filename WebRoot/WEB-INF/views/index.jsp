@@ -218,7 +218,7 @@
     </div>
 	<div id="Div3" style="width:1200px;margin:5px auto;text-align: center;">
 	  	<c:forEach items="${list_ad }" var="ad" begin="0" end="3" step="1">
-	  		<a href="${ad.adLink }"><img src="/gzpy_manage${ad.imagePath}" class="photo" style="margin:0 0 0 10px;width:20%; height: 100px;" alt="banner" /></a>
+	  		<a href="${ad.adLink }" target="_blank"><img src="/gzpy_manage${ad.imagePath}" class="photo" style="margin:0 0 0 10px;width:20%; height: 100px;" alt="banner" /></a>
 	  	</c:forEach>
 	 </div>
 	<div class="foot">
