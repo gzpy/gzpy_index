@@ -130,7 +130,7 @@
         <div class="hot-event">
         	<div class="event-item">
                 <a target="_blank" href="${ctx }/product/toProductDetail.do?productName=96119" class="banner">
-                    <img src="${ctx }/css_files/首页4.jpg" class="photo" style="width:100%; height: 467px;" alt="banner"/>
+                    <img src="${ctx }/css_files/index4.jpg" class="photo" style="width:100%; height: 467px;" alt="banner"/>
                 </a>
             </div>
         </div>
