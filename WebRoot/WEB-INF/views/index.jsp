@@ -140,7 +140,7 @@
   		<div class="anli_title">
 			<img src="${ctx }/css_files/anli_title.jpg" usemap="#Map" border="0" />
 			<map name="Map" id="Map">
-				<area shape="rect" coords="662,4,716,28" href="jiejue.html"/>
+				<area shape="rect" coords="662,4,716,28" href="${ctx}/project/goJJFAAll.do"/>
 			</map>
 		</div>
 		
