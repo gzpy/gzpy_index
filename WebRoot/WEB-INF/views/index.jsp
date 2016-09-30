@@ -31,7 +31,7 @@
 <body>
 <div class="top">
   <div class="topbox">
-    <div class="logo"> <img src="${ctx }/css_files/logo.jpg" /></div>
+    <div class="logo"> <img src="${ctx }/css_files/logo.png" /></div>
     <div id="container">
       <div class="menu">
         <!--nav开始-->
@@ -63,11 +63,11 @@
                 </ul>
               </li>
               
-              <li style="z-index: 98;"> <a href="know_pinyun.html" class=""><font face="微软雅黑">走进品韵</font></a>
+               <li style="z-index: 98;"> <a href="${ctx}/pinyun/toAboutPinyun.do" class=""><font face="微软雅黑">走进品韵</font></a>
                 <ul style="top: 40px; visibility: visible; left: 0px; width: 90px; display: none;">
-                    <li> <a id="a71" href="know_pinyun.html">关于品韵</a> </li>
-                    <li> <a id="a74" href="aboutUs_zizhi.html">公司资质</a> </li>
-                    <li> <a id="a75" href="aboutUs_honor.html">公司荣誉</a> </li>
+                    <li> <a id="a71" href="${ctx}/pinyun/toAboutPinyun.do">关于品韵</a> </li>
+                    <li> <a id="a74" href="${ctx}/pinyun/toAbout.do?typeName=gszz">公司资质</a> </li>
+                    <li> <a id="a75" href="${ctx}/pinyun/toAbout.do?typeName=gsry">公司荣誉</a> </li>
                 </ul>
               </li>
               
@@ -76,7 +76,7 @@
               </li>
               
               <li style="z-index: 95;">
-                <a href="connection_pinyun.html" flag="88" class=""><font face="微软雅黑">联系我们</font></a>
+                <a href="${ctx }/pinyun/toConnection.do" flag="88" class=""><font face="微软雅黑">联系我们</font></a>
               </li>
             </ul>
             <br style="clear: left" />
@@ -216,7 +216,11 @@
 		</div>
 	  </div>
     </div>
-
+	<div id="Div3" style="width:1200px;margin:5px auto;text-align: center;">
+	  	<c:forEach items="${list_ad }" var="ad" begin="0" end="3" step="1">
+	  		<a href="${ad.adLink }"><img src="/gzpy_manage${ad.imagePath}" class="photo" style="margin:0 0 0 10px;width:20%; height: 100px;" alt="banner" /></a>
+	  	</c:forEach>
+	 </div>
 	<div class="foot">
 		<div class="foot_text">
 	   	 	Copyright(C)2013-2016 广州品韵信息科技有限公司 版权所有 粤ICP备*********号

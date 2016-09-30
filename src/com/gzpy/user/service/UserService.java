@@ -12,11 +12,6 @@ public interface UserService {
 	 * @return
 	 */
 	public Page<User> findUserByCurrentPage(int currentPage, int pageSize);
-	//添加用户
-	public User saveUser(User user);
-	
-	//删除用户
-	public void deleteUser(String userId);
 	
 	public User findUserById(String userId);
 	

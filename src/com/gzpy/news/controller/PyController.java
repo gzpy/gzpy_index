@@ -17,8 +17,8 @@ import com.gzpy.project.entity.Project;
 import com.gzpy.project.service.ProjectService;
 
 @Controller
-@RequestMapping("/news")
-public class NewsController {
+@RequestMapping("/pinyun")
+public class PyController {
 
 	@Autowired
 	private NewsService newsService;
@@ -27,76 +27,64 @@ public class NewsController {
 	private NewsTypeService newsTypeService;
 	
 	@Autowired
-	private ProjectService projectService;
-
-	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private ProjectService projectService;
+	
+	@RequestMapping("/toAboutPinyun.do")
+	public String toAboutPinyun(ModelMap map) {
 
-	@RequestMapping("/toNewsCenter.do")
-	public String toNewsCenter(ModelMap map) {
-
+		List<News> list_news1 = newsService.findNewsByType(newsTypeService
+				.findNewsTypeByName("关于品韵").getTypeId());
+		List<News> list_news2 = newsService.findNewsByType(newsTypeService
+				.findNewsTypeByName("公司资质").getTypeId());
+		List<News> list_news3 = newsService.findNewsByType(newsTypeService
+				.findNewsTypeByName("公司荣誉").getTypeId());
+		
 		List<Product> list_product = productService.findProductByStatus("%",
 				"N");
-		News news_gs = newsService.findNewsByType(
-				newsTypeService.findNewsTypeByName("公司新闻").getTypeId()).get(0);
-		News news_hy = newsService.findNewsByType(
-				newsTypeService.findNewsTypeByName("行业动态").getTypeId()).get(0);
-		
+
 		List<Project> projectList=projectService.projectfindBydelstatus();
 		
 	    map.addAttribute("projectList",projectList);
 		map.addAttribute("list_product", list_product);
-		map.addAttribute("news_gs", news_gs);
-		map.addAttribute("news_hy", news_hy);
-
-		return "news/news.jsp";
+		map.addAttribute("list_news1", list_news1);
+		map.addAttribute("list_news2", list_news2);
+		map.addAttribute("list_news3", list_news3);
+		
+		return "/pinyun/pinyun.jsp";
 	}
-
-	@RequestMapping("/toNews.do")
-	public String toNews(ModelMap map, String type) {
-
-		List<Product> list_product = productService.findProductByStatus("%",
-				"N");
+	
+	@RequestMapping("/toAbout.do")
+	public String toAbout(String typeName,ModelMap map){
+		
 		List<News> list_news;
-		String newsType = null;
-
-		if ("gs".equals(type)) {
+		if("gszz".equals(typeName)){
 			list_news = newsService.findNewsByType(newsTypeService
-					.findNewsTypeByName("公司新闻").getTypeId());
-			newsType = "公司新闻";
-		} else if ("hy".equals(type)) {
+					.findNewsTypeByName("公司资质").getTypeId());
+		} else if("gsry".equals(typeName)){
 			list_news = newsService.findNewsByType(newsTypeService
-					.findNewsTypeByName("行业动态").getTypeId());
-			newsType = "行业动态";
+					.findNewsTypeByName("公司荣誉").getTypeId());
 		} else {
 			list_news = new ArrayList<News>();
 		}
+		
+		List<Product> list_product = productService.findProductByStatus("%",
+				"N");
 
 		List<Project> projectList=projectService.projectfindBydelstatus();
 		
 	    map.addAttribute("projectList",projectList);
 		map.addAttribute("list_product", list_product);
 		map.addAttribute("list_news", list_news);
-		map.addAttribute("newsType", newsType);
-
-		return "news/newsType.jsp";
+		
+		return "/pinyun/about.jsp";
 	}
-
-	@RequestMapping("/toNewsDetail.do")
-	public String toNewsDetail(String newsId, ModelMap map) {
-
-		News news;
-
-		if (newsId != null && newsId.length() == 36) {
-			news = newsService.findNewsById(newsId);
-			if(news != null){
-				news.setTypeName(newsTypeService.findNewsTypeById(news.getTypeId())
-					.getTypeName());
-			}
-		} else {
-			news = new News();
-		}
-
+	
+	@RequestMapping("/toConnection.do")
+	public String toConnection(ModelMap map){
+		
 		List<Product> list_product = productService.findProductByStatus("%",
 				"N");
 
@@ -104,8 +92,8 @@ public class NewsController {
 		
 	    map.addAttribute("projectList",projectList);
 		map.addAttribute("list_product", list_product);
-		map.addAttribute("news", news);
-
-		return "news/newsDetail.jsp";
+		return "/pinyun/connection.jsp";
+		
 	}
+	
 }

@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.gzpy.advert.entity.Ad;
+import com.gzpy.advert.service.AdService;
 import com.gzpy.news.entity.News;
 import com.gzpy.news.service.NewsService;
 import com.gzpy.news.service.NewsTypeService;
@@ -30,6 +32,9 @@ public class IndexController {
 
 	@Autowired
 	private NewsTypeService newsTypeService;
+	
+	@Autowired 
+	private AdService adService;
 	
 	@Resource
 	ProjectService projectService;
@@ -74,7 +79,10 @@ public class IndexController {
 				news.setShortTitle(news.getNewsTitle());
 			}
 		}
-
+		
+		List<Ad> list_ad=adService.findAdShowIndex();
+		
+		map.addAttribute("list_ad", list_ad);
 		map.addAttribute("list_product", list_product);
 		map.addAttribute("list_news", list_news);
 

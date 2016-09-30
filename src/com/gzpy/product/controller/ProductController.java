@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gzpy.product.entity.Product;
 import com.gzpy.product.service.ProductService;
+import com.gzpy.project.entity.Project;
+import com.gzpy.project.service.ProjectService;
 
 @Controller
 @RequestMapping("/product")
@@ -16,12 +18,19 @@ public class ProductController{
 
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private ProjectService projectService;
 
 	@RequestMapping("/toProductCenter.do")
 	public String toProductCenter(ModelMap map){
 		
-		List<Product> list_product = productService.findProductByStatus("%", "N");
+		List<Product> list_product = productService.findProductByStatus("%",
+				"N");
+
+		List<Project> projectList=projectService.projectfindBydelstatus();
 		
+	    map.addAttribute("projectList",projectList);
 		map.addAttribute("list_product", list_product);
 		
 		return "/product/product.jsp";
@@ -50,8 +59,12 @@ public class ProductController{
 			}
 		}
 		
-		List<Product> list_product = productService.findProductByStatus("%", "N");
+		List<Product> list_product = productService.findProductByStatus("%",
+				"N");
+
+		List<Project> projectList=projectService.projectfindBydelstatus();
 		
+	    map.addAttribute("projectList",projectList);
 		map.addAttribute("list_product", list_product);	
 		map.addAttribute("productCurrent", productCurrent);
 		

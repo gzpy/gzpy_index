@@ -37,18 +37,6 @@ public Page<User> findUserByCurrentPage(int currentPage, int pageSize) {
 	}
 
 @Override
-public User saveUser(User user) {
-	
-	return userDao.save(user);
-}
-
-@Override
-public void deleteUser(String userId) {
-	// TODO Auto-generated method stub
-	userDao.delete(userId);
-}
-
-@Override
 public User findUserById(String userId) {
 	// TODO Auto-generated method stub
 	return userDao.findOne(userId);
