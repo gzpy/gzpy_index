@@ -44,7 +44,7 @@
               <li style="z-index: 100;"> <a href="${ctx }/product/toProductCenter.do" class="product_bg"><font face="微软雅黑">产品中心</font></a>
                 <ul style="top: 40px; visibility: visible; left: 0px; width: 200px; display: none;">
                    	<c:forEach items="${list_product }" var="product"> 
-                   		 <li> <a href="${ctx }/product/toProductDetail.do?productId=${product.productId}" class="qwe">${product.productTitle}</a> </li>
+                   		<li> <a href="${ctx }/product/toProductDetail.do?productId=${product.productId}" class="qwe">${product.productTitle}</a> </li>
                    	</c:forEach>
                 </ul>
               </li>
@@ -97,10 +97,9 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 <!--
 <div class="demo_banner"><img src="${ctx }/css_files/demo_banner7.jpg" width="100%" height="355px"></div>
 -->
-<div id="inner" style="width:1200px;text-align:center;margin:5px auto;height: 355px;">
+<div id="inner" style="width:1200px;text-align:center;margin:5px auto;height:410px; ">
         <div class="hot-event">
         	<div class="event-item">
-     
                     <img src="${ctx }/css_files/demo_banner7.jpg" class="photo" style="width:96%; height: 355px;" alt="banner">
                 </a>
             </div>
@@ -111,9 +110,10 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
     <div class="solution_menu_box">
          <div class="solution_menu_box_title"><font color="#666666" face="微软雅黑">解决方案</font></div>
          <c:forEach items="${projectList}" var="projectlist" begin="0" end="1" step="1"> 
-            <div class="solution_menu_box_title_no2"><a href="${ctx}/project/goJJFA.do?projectId=${projectlist.projectId}" class="a2">${projectlist.projectTitle}</a></div>
+            <div class="solution_menu_box_title_no2">
+            <a href="${ctx}/project/goJJFA.do?projectId=${projectlist.projectId}" class="a2">${projectlist.projectTitle}</a>
+            </div>
          </c:forEach>
-
       <a href="#">
       <div class="yun"><img src="${ctx }/css_files/yun.jpg" width="255" height="82"></div>
       </a><a href="#">

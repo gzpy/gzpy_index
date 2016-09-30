@@ -91,7 +91,7 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 <!--
 <div class="demo_banner"><img src="./css_files/demo_banner7.jpg" width="100%" height="355px"></div>
 -->
-<div id="inner" style="width:1200px;text-align:center;margin:5px auto;height: 355px;">
+<div id="inner" style="width:1200px;text-align:center;margin:5px auto;height: 410px;">
         <div class="hot-event">
         	<div class="event-item">
                     <img src="${ctx}/css_files/demo_banner7.jpg" class="photo" style="width:96%; height: 355px;" alt="banner">
