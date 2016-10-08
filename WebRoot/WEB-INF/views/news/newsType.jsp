@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>广州品韵信息科技有限公司官方网站</title>
+<title>${newsType}_广州品韵信息科技有限公司</title>
 <meta name="author" content="广州品韵信息科技有限公司"/>
 <meta name="copyright" content="广州品韵信息科技有限公司"/>
 <meta name="company" content="广州品韵信息科技有限公司"/>
@@ -105,10 +105,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	  	<font color="#666666" face="微软雅黑">新闻资讯</font>
 	  </div>
 	  <div class="solution_menu_box_title_no2">
-	  		<a href="${ctx }/news/toNews.do?type=gs" class="a2">公司新闻</a>
+	  		<a href="${ctx }/news/news.do?t=gs" class="a2">公司新闻</a>
 	  </div>
 	  <div class="solution_menu_box_title_no2">
-	  		<a href="${ctx }/news/toNews.do?type=hy" class="a2">行业动态</a>
+	  		<a href="${ctx }/news/news.do?t=hy" class="a2">行业动态</a>
 	  </div>
 
       <div class="yun">
@@ -126,7 +126,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<font color="#0033FF" face="微软雅黑">新闻中心</font>
 		</div>
 		<div class="intermap">
-	  		当前位置:<a href="${ctx }/index/toIndex.do" class="a3">首页</a> &gt;&gt;  <a href="${ctx }/news/toNewsCenter.do" class="a3">新闻资讯</a> &gt;&gt;  <font color="#FF0000">${newsType }</font>
+	  		当前位置:<a href="${ctx }/index.do" class="a3">首页</a> &gt;&gt;  <a href="${ctx }/news/newsCenter.do" class="a3">新闻资讯</a> &gt;&gt;  <font color="#FF0000">${newsType }</font>
 	  	</div>
     </div>
     <div class="solution_fenlei_no1_box">  
@@ -137,7 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="news_center">
     	<ul>
     		<c:forEach items="${list_news}" var="news">
-    			<li><a href="${ctx }/news/toNewsDetail.do?newsId=${news.newsId}"><b>「${newsType }」${news.newsTitle }</b><span>${news.issueDate }</span></a></li>	
+    			<li><a href="${ctx }/news/newsDetail.do?nid=${news.newsId}"><b>「${newsType }」${news.newsTitle }</b><span>${news.issueDate }</span></a></li>	
     		</c:forEach> 
         </ul>
         </div>   
@@ -146,7 +146,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <div class="foot">
 	<div class="foot_text">
-	  	Copyright(C)2013-2016 广州品韵信息科技有限公司 版权所有 粤ICP备*********号
+	  	Copyright(C)2013-2016 广州品韵信息科技有限公司 版权所有 粤ICP备16089509号
 	</div>
 </div>
 </body>
