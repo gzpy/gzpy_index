@@ -134,7 +134,7 @@
 						<font face="微软雅黑" color="#0033FF">在线留言</font>
 					</div>
 					<div class="intermap">
-						当前位置:<a href="${ctx }/index/index.do" class="a3">首页</a>&gt;&gt;<font
+						当前位置:<a href="${ctx }/index.do" class="a3">首页</a>&gt;&gt;<font
 							color="#FF0000">在线留言</font>
 					</div>
 				</div>
