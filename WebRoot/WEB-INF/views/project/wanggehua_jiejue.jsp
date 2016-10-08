@@ -124,8 +124,6 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
     <div class="solution_right_box_t_bg">
       <div class="neiye_title">
                 <font face="微软雅黑" color="#0033FF">解决方案</font>
-
-
       </div>
       <div class="intermap">当前位置:<a href="${ctx}/index/toIndex.do" class="a3">首页</a>&gt;&gt;
                 <a href="${ctx}/project/JJFAAll.do " class="a3">解决方案
@@ -141,10 +139,10 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
         <c:set var="imagePath" value="${fn:split(project.imagePath, ',')}"/>
         <div class="solution_fenlei1_t">
           <div class="company_names"><font face="微软雅黑" color="#0033FF">${project.projectTitle}</font></div>
-   
         </div>
       <p style="text-align: left;"><span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 16px;">&nbsp; &nbsp; 
-		</span></p>
+		${project.introduction}</span>
+	  </p>
 		<c:forEach items="${imagePath}" var="image" begin="1" step="1">
 		  <img src="/gzpy_manage${image}" width="720" height="350px" alt=""><br><br><br><br>
 	   </c:forEach>
