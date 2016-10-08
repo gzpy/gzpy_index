@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gzpy.news.entity.News;
 import com.gzpy.news.service.NewsService;
@@ -32,7 +33,7 @@ public class PyController {
 	@Autowired
 	private ProjectService projectService;
 	
-	@RequestMapping("/toAboutPinyun.do")
+	@RequestMapping("/aboutPinyun.do")
 	public String toAboutPinyun(ModelMap map) {
 
 		List<News> list_news1 = newsService.findNewsByType(newsTypeService
@@ -56,8 +57,8 @@ public class PyController {
 		return "/pinyun/pinyun.jsp";
 	}
 	
-	@RequestMapping("/toAbout.do")
-	public String toAbout(String typeName,ModelMap map){
+	@RequestMapping("/about.do")
+	public String toAbout(@RequestParam("tn") String typeName,ModelMap map){
 		
 		List<News> list_news;
 		if("gszz".equals(typeName)){
@@ -82,7 +83,7 @@ public class PyController {
 		return "/pinyun/about.jsp";
 	}
 	
-	@RequestMapping("/toConnection.do")
+	@RequestMapping("/connection.do")
 	public String toConnection(ModelMap map){
 		
 		List<Product> list_product = productService.findProductByStatus("%",

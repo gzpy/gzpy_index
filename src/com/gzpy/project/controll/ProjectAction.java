@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gzpy.product.entity.Product;
 import com.gzpy.product.service.ProductService;
@@ -23,8 +24,8 @@ public class ProjectAction{
 	@Autowired
 	private ProductService productService;
 	
-	@RequestMapping("/goJJFA.do")
-	public String goWGHJJ(String projectId,ModelMap map){
+	@RequestMapping("/JJFA.do")
+	public String goWGHJJ(@RequestParam("pd") String projectId,ModelMap map){
 		Project project=projectService.findProjectById(projectId);
 		map.addAttribute("project",project);
 		List<Product> list_product = productService.findProductByStatus("%",
@@ -37,7 +38,7 @@ public class ProjectAction{
 		return "project/wanggehua_jiejue.jsp";
 	}
 	
-	@RequestMapping("/goJJFAAll.do")
+	@RequestMapping("/JJFAAll.do")
 	public String goJJFAAll(ModelMap map){
 		List<Product> list_product = productService.findProductByStatus("%",
 				"N");

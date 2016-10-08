@@ -15,7 +15,7 @@
 <script src="${ctx}/css_files/common.js" type="text/javascript"></script>
 
 
-<title>广州品韵信息科技有限公司官方网站</title>
+<title>解决方案_广州品韵信息科技有限公司</title>
 <meta name="author" content="广州品韵信息科技有限公司">
 <meta name="copyright" content="广州品韵信息科技有限公司">
 <meta name="company" content="广州品韵信息科技有限公司">
@@ -49,10 +49,10 @@
                 </ul>
               </li>
               
-              <li style="z-index: 99;"> <a href="${ctx}/project/goJJFAAll.do" class="jiejue"><font face="微软雅黑">解决方案</font></a>
+              <li style="z-index: 99;"> <a href="${ctx}/project/JJFAAll.do" class="jiejue"><font face="微软雅黑">解决方案</font></a>
                 <ul style="top: 40px; visibility: visible; left: 0px; width: 240px; display: none;">
                  <c:forEach items="${projectList}" var="project" begin="0" end="1" step="1">
-                   <li> <a href="${ctx}/project/goJJFA.do?projectId=${project.projectId}" class="asd">${project.projectTitle}</a> </li>
+                   <li> <a href="${ctx}/project/JJFA.do?pd=${project.projectId}" class="asd">${project.projectTitle}</a> </li>
                  </c:forEach>
                 </ul>
               </li>
@@ -66,7 +66,7 @@
               </li>
               
               <li style="z-index: 97;">
-                <a href="${ctx}/remark/goRemark.do" flag="88" class=""><font face="微软雅黑">在线留言</font></a>
+                <a href="${ctx}/remark/Remark.do" flag="88" class=""><font face="微软雅黑">在线留言</font></a>
               </li>
               
               <li style="z-index: 95;">
@@ -111,7 +111,7 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
          <div class="solution_menu_box_title"><font color="#666666" face="微软雅黑">解决方案</font></div>
          <c:forEach items="${projectList}" var="projectlist" begin="0" end="1" step="1"> 
             <div class="solution_menu_box_title_no2">
-            <a href="${ctx}/project/goJJFA.do?projectId=${projectlist.projectId}" class="a2">${projectlist.projectTitle}</a>
+            <a href="${ctx}/project/JJFA.do?pd=${projectlist.projectId}" class="a2">${projectlist.projectTitle}</a>
             </div>
          </c:forEach>
       <a href="#">
@@ -128,7 +128,7 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 
       </div>
       <div class="intermap">当前位置:<a href="${ctx}/index/toIndex.do" class="a3">首页</a>&gt;&gt;
-                <a href="${ctx}/project/goJJFAAll.do " class="a3">解决方案
+                <a href="${ctx}/project/JJFAAll.do " class="a3">解决方案
         
 
         </a>&gt;&gt;<font color="#FF0000">${project.projectTitle}</font>
@@ -161,9 +161,7 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 
 <div class="foot">
 	  <div class="foot_text">
-	  		Copyright(C)2013-2016 广州品韵信息科技有限公司 版权所有 粤ICP备*********号
-
-
+	  		Copyright(C)2013-2016 广州品韵信息科技有限公司 版权所有 粤ICP备16089509号
 	  </div>
 	</div>
 
