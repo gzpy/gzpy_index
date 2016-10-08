@@ -63,11 +63,11 @@
                 </ul>
               </li>
               
-               <li style="z-index: 98;"> <a href="${ctx}/pinyun/toAboutPinyun.do" class=""><font face="微软雅黑">走进品韵</font></a>
+               <li style="z-index: 98;"> <a href="${ctx}/pinyun/aboutPinyun.do" class=""><font face="微软雅黑">走进品韵</font></a>
                 <ul style="top: 40px; visibility: visible; left: 0px; width: 90px; display: none;">
-                    <li> <a id="a71" href="${ctx}/pinyun/toAboutPinyun.do">关于品韵</a> </li>
-                    <li> <a id="a74" href="${ctx}/pinyun/toAbout.do?typeName=gszz">公司资质</a> </li>
-                    <li> <a id="a75" href="${ctx}/pinyun/toAbout.do?typeName=gsry">公司荣誉</a> </li>
+                    <li> <a id="a71" href="${ctx}/pinyun/aboutPinyun.do">关于品韵</a> </li>
+                    <li> <a id="a74" href="${ctx}/pinyun/about.do?tn=gszz">公司资质</a> </li>
+                    <li> <a id="a75" href="${ctx}/pinyun/about.do?tn=gsry">公司荣誉</a> </li>
                 </ul>
               </li>
               
@@ -76,7 +76,7 @@
               </li>
               
               <li style="z-index: 95;">
-                <a href="${ctx }/pinyun/toConnection.do" flag="88" class=""><font face="微软雅黑">联系我们</font></a>
+                <a href="${ctx }/pinyun/connection.do" flag="88" class=""><font face="微软雅黑">联系我们</font></a>
               </li>
             </ul>
             <br style="clear: left" />
@@ -217,9 +217,11 @@
 	  </div>
     </div>
 	<div id="Div3" style="width:1200px;margin:5px auto;text-align: center;">
-	  	<c:forEach items="${list_ad }" var="ad" begin="0" end="3" step="1">
+	 	<c:forEach items="${list_ad }" var="ad" begin="0" end="3" step="1">
+	 	<c:if test="${ad.imagePath!=null }">
 	  		<a href="${ad.adLink }" target="_blank"><img src="/gzpy_manage${ad.imagePath}" class="photo" style="margin:0 0 0 10px;width:20%; height: 100px;" alt="banner" /></a>
-	  	</c:forEach>
+	  	</c:if>
+	  	</c:forEach>   
 	 </div>
 	<div class="foot">
 		<div class="foot_text">

@@ -10,7 +10,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-	<title>广州品韵信息科技有限公司官方网站</title>
+	<title>关于品韵_广州品韵信息科技有限公司官方网站</title>
 	<meta name="author" content="广州品韵信息科技有限公司"/>
 	<meta name="copyright" content="广州品韵信息科技有限公司"/>
 	<meta name="company" content="广州品韵信息科技有限公司"/>
@@ -55,11 +55,11 @@
                 </ul>
               </li>
               
-               <li style="z-index: 98;"> <a href="${ctx}/pinyun/toAboutPinyun.do" class=""><font face="微软雅黑">走进品韵</font></a>
+               <li style="z-index: 98;"> <a href="${ctx}/pinyun/aboutPinyun.do" class=""><font face="微软雅黑">走进品韵</font></a>
                 <ul style="top: 40px; visibility: visible; left: 0px; width: 90px; display: none;">
-                    <li> <a id="a71" href="${ctx}/pinyun/toAboutPinyun.do">关于品韵</a> </li>
-                    <li> <a id="a74" href="${ctx}/pinyun/toAbout.do?typeName=gszz">公司资质</a> </li>
-                    <li> <a id="a75" href="${ctx}/pinyun/toAbout.do?typeName=gsry">公司荣誉</a> </li>
+                    <li> <a id="a71" href="${ctx}/pinyun/aboutPinyun.do">关于品韵</a> </li>
+                    <li> <a id="a74" href="${ctx}/pinyun/about.do?tn=gszz">公司资质</a> </li>
+                    <li> <a id="a75" href="${ctx}/pinyun/about.do?tn=gsry">公司荣誉</a> </li>
                 </ul>
               </li>
               
@@ -68,7 +68,7 @@
               </li>
               
               <li style="z-index: 95;">
-                <a href="${ctx }/pinyun/toConnection.do" flag="88" class=""><font face="微软雅黑">联系我们</font></a>
+                <a href="${ctx }/pinyun/connection.do" flag="88" class=""><font face="微软雅黑">联系我们</font></a>
               </li>
             </ul>
             <br style="clear: left" />
@@ -106,9 +106,9 @@
     <div class="solution_menu_box">
       <div class="solution_menu_box_title"> <font color="#666666" face="微软雅黑">走进品韵</font></div>
 	 
-      	<div class="solution_menu_box_title_no2"> <a href="${ctx }/pinyun/toAboutPinyun.do" class="a2">关于品韵</a></div>
-      	<div class="solution_menu_box_title_no2"> <a href="${ctx }/pinyun/toAbout.do?typeName=gszz" class="a2">公司资质</a></div>
-      	<div class="solution_menu_box_title_no2"> <a href="${ctx }/pinyun/toAbout.do?typeName=gsry" class="a2">公司荣誉</a></div>
+      	<div class="solution_menu_box_title_no2"> <a href="${ctx }/pinyun/aboutPinyun.do" class="a2">关于品韵</a></div>
+      	<div class="solution_menu_box_title_no2"> <a href="${ctx }/pinyun/about.do?tn=gszz" class="a2">公司资质</a></div>
+      	<div class="solution_menu_box_title_no2"> <a href="${ctx }/pinyun/about.do?tn=gsry" class="a2">公司荣誉</a></div>
     
       <div class="yun">
       	<a href="#">
