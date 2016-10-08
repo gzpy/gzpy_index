@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.gzpy.product.entity.Product;
 import com.gzpy.product.service.ProductService;
@@ -30,7 +31,7 @@ public class RemarkControll{
 	@Autowired
 	private ProductService productService;
 	
-	@RequestMapping("/goRemark.do")
+	@RequestMapping("/Remark.do")
 	public String goRemark(ModelMap map){
 		List<Product> list_product = productService.findProductByStatus("%",
 				"N");
@@ -43,6 +44,7 @@ public class RemarkControll{
 	}
 	
 	@RequestMapping("/saveRemark.do")
+	@ResponseBody
 	public String SaveRemark(Remark remark,ModelMap map){
 		List<Product> list_product = productService.findProductByStatus("%",
 				"N");
@@ -57,6 +59,6 @@ public class RemarkControll{
 		remark.setDelStatus("N");
 		remark.setStatus("N");
 		remarkService.saveRemark(remark);
-		return "remark/liuyan.jsp";
+		return "success";
 	}
 }
