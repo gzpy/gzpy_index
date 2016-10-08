@@ -10,7 +10,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-	<title>广州品韵信息科技有限公司官方网站</title>
+	<title>产品中心_广州品韵信息科技有限公司</title>
 	<meta name="author" content="广州品韵信息科技有限公司"/>
 	<meta name="copyright" content="广州品韵信息科技有限公司"/>
 	<meta name="company" content="广州品韵信息科技有限公司"/>
@@ -116,7 +116,7 @@
       	</a>
       </div>
       <div class="yun">
-      	<a href="#">
+      	<a href="${ctx }/pinyun/connection.do">
       		<img src="${ctx }/css_files/lianxi_pic.jpg" width="255" height="82"/>
       	</a>
       </div>
