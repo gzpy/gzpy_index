@@ -157,7 +157,7 @@
 <script src="${ctx }/css_files/common.js" type="text/javascript"></script>
 <div class="foot">
 	<div class="foot_text">Copyright(C)2013-2016 广州品韵信息科技有限公司 版权所有
-		粤ICP备*********号</div>
+		粤ICP备16089509号</div>
 </div>
 </body>
 </html>
