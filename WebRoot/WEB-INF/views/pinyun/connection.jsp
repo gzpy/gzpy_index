@@ -116,7 +116,7 @@
       	</a>
       </div>
       <div class="yun">
-      	<a href="#">
+      	<a href="${ctx }/pinyun/connection.do">
       		<img src="${ctx }/css_files/lianxi_pic.jpg" width="255" height="82"/>
       	</a>
       </div>
@@ -127,7 +127,7 @@
       <div class="neiye_title">
          <font face="微软雅黑" color="#0033FF">联系我们</font>
       </div>
-      <div class="intermap"> 当前位置:<a href="${ctx }/index/toIndex.do" class="a3">首页</a> &gt;&gt;
+      <div class="intermap"> 当前位置:<a href="${ctx }/index.do" class="a3">首页</a> &gt;&gt;
         <font color="#FF0000">联系我们</font>
         </div>
       </div>
