@@ -10,6 +10,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
+	<link rel="shortcut icon" href="${ctx }/css_files/favicon.ico" />
 	<title>产品中心_广州品韵信息科技有限公司</title>
 	<meta name="author" content="广州品韵信息科技有限公司"/>
 	<meta name="copyright" content="广州品韵信息科技有限公司"/>
