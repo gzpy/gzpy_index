@@ -144,7 +144,7 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
    
         </div>
       <p style="text-align: left;"><span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 16px;">&nbsp; &nbsp; 
-		</span></p>
+		${project.introduction}</span></p>
 		<c:forEach items="${imagePath}" var="image" begin="1" step="1">
 		  <img src="/gzpy_manage${image}" width="720" height="350px" alt=""><br><br><br><br>
 	   </c:forEach>
