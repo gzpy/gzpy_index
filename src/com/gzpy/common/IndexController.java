@@ -21,7 +21,6 @@ import com.gzpy.project.entity.Project;
 import com.gzpy.project.service.ProjectService;
 
 @Controller
-@RequestMapping("/index")
 public class IndexController {
 
 	@Autowired
@@ -39,7 +38,7 @@ public class IndexController {
 	@Resource
 	ProjectService projectService;
 
-	@RequestMapping("/toIndex.do")
+	@RequestMapping("/index.do")
 	public String toIndex(ModelMap map) {
 		List<Project> projectList=projectService.projectfindBydelstatus();
 	    map.addAttribute("projectList",projectList);

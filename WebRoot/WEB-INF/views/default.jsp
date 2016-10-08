@@ -10,6 +10,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 </head>
 <body>
-	<jsp:forward page="/index/toIndex.do" />
+	<jsp:forward page="/index.do" />
 </body>
 </html>
