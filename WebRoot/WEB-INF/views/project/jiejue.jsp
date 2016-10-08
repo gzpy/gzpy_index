@@ -10,7 +10,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<title>广州品韵信息科技有限公司官方网站</title>
+<title>解决方案_广州品韵信息科技有限公司</title>
 
 <link href="${ctx }/css_files/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="${ctx }/css_files/jquery-1.8.0.min.js"></script>
@@ -44,10 +44,10 @@
                 </ul>
               </li>
               
-              <li style="z-index: 99;"> <a href="${ctx}/project/goJJFAAll.do" class="jiejue"><font face="微软雅黑">解决方案</font></a>
+              <li style="z-index: 99;"> <a href="${ctx}/project/JJFAAll.do" class="jiejue"><font face="微软雅黑">解决方案</font></a>
                 <ul style="top: 40px; visibility: visible; left: 0px; width: 240px; display: none;">
                  <c:forEach items="${projectList}" var="project" begin="0" end="1" step="1">
-                   <li> <a href="${ctx}/project/goJJFA.do?projectId=${project.projectId}" class="asd">${project.projectTitle}</a> </li>
+                   <li> <a href="${ctx}/project/JJFA.do?pd=${project.projectId}" class="asd">${project.projectTitle}</a> </li>
                  </c:forEach>
                 </ul>
               </li>
@@ -103,10 +103,9 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
   <div class="solution_left_box">
     <div class="solution_menu_box">
             <div class="solution_menu_box_title"><font color="#666666" face="微软雅黑">解决方案</font></div>
-
-
+            
             <c:forEach items="${projectList}" var="project" begin="0" end="1" step="1">
-                   <div class="solution_menu_box_title_no2"><li><a href="${ctx}/project/goJJFA.do?projectId=${project.projectId}" class="asd">${project.projectTitle}</a></li></div>
+                   <div class="solution_menu_box_title_no2"><a href="${ctx}/project/JJFA.do?pd=${project.projectId}" class="asd">${project.projectTitle}</a></div>
             </c:forEach>
 
       <a href="#">
@@ -121,7 +120,7 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
                 <font face="微软雅黑" color="#0033FF">解决方案</font>
       </div>
       <div class="intermap">当前位置:<a href="${ctx }/index/toIndex.do" class="a3">首页</a>&gt;&gt;
-                <a href="${ctx}/project/goJJFAALL。do" class="a3">
+                <a href="${ctx}/project/JJFAALL。do" class="a3">
         </a>&gt;&gt;<font color="#FF0000">解决方案</font>
       </div>
     </div>
@@ -149,7 +148,7 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 
 <div class="foot">
 	  <div class="foot_text">
-	  		Copyright(C)2013-2016 广州品韵信息科技有限公司 版权所有 粤ICP备*********号
+	  		Copyright(C)2013-2016 广州品韵信息科技有限公司 版权所有 粤ICP备16089509号
 	  </div>
 	</div>
 </body>
