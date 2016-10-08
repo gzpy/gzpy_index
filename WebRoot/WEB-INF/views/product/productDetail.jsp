@@ -116,7 +116,7 @@
       	</a>
       </div>
       <div class="yun">
-      	<a href="#">
+      	<a href="${ctx }/pinyun/connection.do">
       		<img src="${ctx }/css_files/lianxi_pic.jpg" width="255" height="82"/>
       	</a>
       </div>

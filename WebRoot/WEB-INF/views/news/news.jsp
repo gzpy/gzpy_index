@@ -114,7 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       	<a href="#"><img src="${ctx }/css_files/yun.jpg" height="82" width="255"/></a>
       </div>
 	  <div class="yun">
-	  	<a href="#"><img src="${ctx }/css_files/lianxi_pic.jpg" height="82" width="255"/></a>
+	  	<a href="${ctx }/pinyun/connection.do"><img src="${ctx }/css_files/lianxi_pic.jpg" height="82" width="255"/></a>
 	  </div>
    </div>
   </div>
