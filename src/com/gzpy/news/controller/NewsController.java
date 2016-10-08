@@ -32,7 +32,7 @@ public class NewsController {
 	@Autowired
 	private ProductService productService;
 
-	@RequestMapping("/toNewsCenter.do")
+	@RequestMapping("/newsCenter.do")
 	public String toNewsCenter(ModelMap map) {
 
 		List<Product> list_product = productService.findProductByStatus("%",
@@ -52,19 +52,19 @@ public class NewsController {
 		return "news/news.jsp";
 	}
 
-	@RequestMapping("/toNews.do")
-	public String toNews(ModelMap map, String type) {
+	@RequestMapping("/news.do")
+	public String toNews(ModelMap map, String t) {
 
 		List<Product> list_product = productService.findProductByStatus("%",
 				"N");
 		List<News> list_news;
 		String newsType = null;
 
-		if ("gs".equals(type)) {
+		if ("gs".equals(t)) {
 			list_news = newsService.findNewsByType(newsTypeService
 					.findNewsTypeByName("公司新闻").getTypeId());
 			newsType = "公司新闻";
-		} else if ("hy".equals(type)) {
+		} else if ("hy".equals(t)) {
 			list_news = newsService.findNewsByType(newsTypeService
 					.findNewsTypeByName("行业动态").getTypeId());
 			newsType = "行业动态";
@@ -82,13 +82,13 @@ public class NewsController {
 		return "news/newsType.jsp";
 	}
 
-	@RequestMapping("/toNewsDetail.do")
-	public String toNewsDetail(String newsId, ModelMap map) {
+	@RequestMapping("/newsDetail.do")
+	public String toNewsDetail(String nid, ModelMap map) {
 
 		News news;
 
-		if (newsId != null && newsId.length() == 36) {
-			news = newsService.findNewsById(newsId);
+		if (nid != null && nid.length() == 36) {
+			news = newsService.findNewsById(nid);
 			if(news != null){
 				news.setTypeName(newsTypeService.findNewsTypeById(news.getTypeId())
 					.getTypeName());

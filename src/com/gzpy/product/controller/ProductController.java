@@ -22,7 +22,7 @@ public class ProductController{
 	@Autowired
 	private ProjectService projectService;
 
-	@RequestMapping("/toProductCenter.do")
+	@RequestMapping("/productCenter.do")
 	public String toProductCenter(ModelMap map){
 		
 		List<Product> list_product = productService.findProductByStatus("%",
@@ -36,24 +36,24 @@ public class ProductController{
 		return "/product/product.jsp";
 	}
 	
-	@RequestMapping("/toProductDetail.do")
-	public String tpProductDetail(ModelMap map,String productId,String productName){
+	@RequestMapping("/productDetail.do")
+	public String tpProductDetail(ModelMap map,String pid,String pn){
 		
 		Product productCurrent = null;
 		
-		if(productName != null){
-			if("wgh".equals(productName)){
+		if(pn != null){
+			if("wgh".equals(pn)){
 				productCurrent = productService.findProductByStatus("%网格化管理系统%", "N").get(0);
-			} else if("zddw".equals(productName)){
+			} else if("zddw".equals(pn)){
 				productCurrent = productService.findProductByStatus("%重点单位管理系统%", "N").get(0);
-			} else if("96119".equals(productName)){
+			} else if("96119".equals(pn)){
 				productCurrent = productService.findProductByStatus("%96119投诉举报系统%", "N").get(0);
 			} else {
 				productCurrent = new Product();
 			}
 		} else {
-			if(productId.length() == 36){
-				productCurrent = productService.findProductById(productId);
+			if(pid.length() == 36){
+				productCurrent = productService.findProductById(pid);
 			} else {
 				productCurrent = new Product();
 			}
