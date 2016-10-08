@@ -127,7 +127,7 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 
 
       </div>
-      <div class="intermap">当前位置:<a href="${ctx}/index/toIndex.do" class="a3">首页</a>&gt;&gt;
+      <div class="intermap">当前位置:<a href="${ctx}/index.do" class="a3">首页</a>&gt;&gt;
                 <a href="${ctx}/project/JJFAAll.do " class="a3">解决方案
         
 

@@ -105,7 +105,7 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
             <div class="solution_menu_box_title"><font color="#666666" face="微软雅黑">解决方案</font></div>
             
             <c:forEach items="${projectList}" var="project" begin="0" end="1" step="1">
-                   <div class="solution_menu_box_title_no2"><a href="${ctx}/project/JJFA.do?pd=${project.projectId}" class="asd">${project.projectTitle}</a></div>
+                   <div class="solution_menu_box_title_no2"><a href="${ctx}/project/JJFA.do?pd=${project.projectId}" class="a2">${project.projectTitle}</a></div>
             </c:forEach>
 
       <a href="#">
@@ -119,7 +119,7 @@ contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
       <div class="neiye_title">
                 <font face="微软雅黑" color="#0033FF">解决方案</font>
       </div>
-      <div class="intermap">当前位置:<a href="${ctx }/index/toIndex.do" class="a3">首页</a>&gt;&gt;
+      <div class="intermap">当前位置:<a href="${ctx }/index.do" class="a3">首页</a>&gt;&gt;
                 <a href="${ctx}/project/JJFAALL。do" class="a3">
         </a>&gt;&gt;<font color="#FF0000">解决方案</font>
       </div>
