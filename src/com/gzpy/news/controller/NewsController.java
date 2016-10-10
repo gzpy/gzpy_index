@@ -25,7 +25,7 @@ public class NewsController {
 
 	@Autowired
 	private NewsTypeService newsTypeService;
-	
+
 	@Autowired
 	private ProjectService projectService;
 
@@ -37,14 +37,23 @@ public class NewsController {
 
 		List<Product> list_product = productService.findProductByStatus("%",
 				"N");
-		News news_gs = newsService.findNewsByType(
-				newsTypeService.findNewsTypeByName("公司新闻").getTypeId()).get(0);
-		News news_hy = newsService.findNewsByType(
-				newsTypeService.findNewsTypeByName("行业动态").getTypeId()).get(0);
-		
-		List<Project> projectList=projectService.projectfindBydelstatus();
-		
-	    map.addAttribute("projectList",projectList);
+		List<News> list_news_gs = newsService.findNewsByType(newsTypeService
+				.findNewsTypeByName("公司新闻").getTypeId());
+		News news_gs = null;
+		if (list_news_gs.size() > 0) {
+			news_gs = list_news_gs.get(0);
+		} 
+
+		List<News> list_news_hy = newsService.findNewsByType(newsTypeService
+				.findNewsTypeByName("行业动态").getTypeId());
+		News news_hy = null;
+		if (list_news_hy.size() > 0) {
+			news_hy = list_news_hy.get(0);
+		} 
+
+		List<Project> projectList = projectService.projectfindBydelstatus();
+
+		map.addAttribute("projectList", projectList);
 		map.addAttribute("list_product", list_product);
 		map.addAttribute("news_gs", news_gs);
 		map.addAttribute("news_hy", news_hy);
@@ -72,9 +81,9 @@ public class NewsController {
 			list_news = new ArrayList<News>();
 		}
 
-		List<Project> projectList=projectService.projectfindBydelstatus();
-		
-	    map.addAttribute("projectList",projectList);
+		List<Project> projectList = projectService.projectfindBydelstatus();
+
+		map.addAttribute("projectList", projectList);
 		map.addAttribute("list_product", list_product);
 		map.addAttribute("list_news", list_news);
 		map.addAttribute("newsType", newsType);
@@ -89,9 +98,9 @@ public class NewsController {
 
 		if (nid != null && nid.length() == 36) {
 			news = newsService.findNewsById(nid);
-			if(news != null){
-				news.setTypeName(newsTypeService.findNewsTypeById(news.getTypeId())
-					.getTypeName());
+			if (news != null) {
+				news.setTypeName(newsTypeService.findNewsTypeById(
+						news.getTypeId()).getTypeName());
 			}
 		} else {
 			news = new News();
@@ -100,9 +109,9 @@ public class NewsController {
 		List<Product> list_product = productService.findProductByStatus("%",
 				"N");
 
-		List<Project> projectList=projectService.projectfindBydelstatus();
-		
-	    map.addAttribute("projectList",projectList);
+		List<Project> projectList = projectService.projectfindBydelstatus();
+
+		map.addAttribute("projectList", projectList);
 		map.addAttribute("list_product", list_product);
 		map.addAttribute("news", news);
 

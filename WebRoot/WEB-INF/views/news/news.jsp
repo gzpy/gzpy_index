@@ -134,16 +134,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <div class="company_names"><font face="微软雅黑" color="#0033FF">公司新闻</font></div>   
         </div>  
        	<div class="news_center">
-    	<ul>
-         	<li><a href="${ctx }/news/newsDetail.do?nid=${news_gs.newsId}"><b>「公司新闻」${news_gs.newsTitle }</b><span>${news_gs.issueDate }</span></a></li>
-        </ul>
+	    	<ul>
+	    		<c:if test="${!empty news_gs }">
+	         		<li><a href="${ctx }/news/newsDetail.do?nid=${news_gs.newsId}"><b>「公司新闻」${news_gs.newsTitle }</b><span>${news_gs.issueDate }</span></a></li>
+	        	</c:if>
+	        </ul>
     	</div>
 	    <div class="solution_fenlei1_t">
 	         <div class="company_names"><font face="微软雅黑" color="#0033FF">行业动态</font></div>
 	    </div>
 	 	<div class="news_center">
 	    	<ul>
-	         	<li><a href="${ctx }/news/newsDetail.do?nid=${news_hy.newsId}"><b>「行业动态」${news_hy.newsTitle }</b><span>${news_hy.issueDate}</span></a></li>       	
+	    		<c:if test="${!empty news_hy }">
+	         		<li><a href="${ctx }/news/newsDetail.do?nid=${news_hy.newsId}"><b>「行业动态」${news_hy.newsTitle }</b><span>${news_hy.issueDate}</span></a></li>       	
+	       		</c:if> 
 	        </ul>
 	    </div>   
     </div>
