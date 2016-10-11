@@ -56,7 +56,7 @@ var _hmt = _hmt || [];
               <li style="z-index: 100;"> <a href="${ctx }/product/productCenter.do" class="product_bg"><font face="微软雅黑">产品中心</font></a>
                 <ul style="top: 40px; visibility: visible; left: 0px; width: 200px; display: none;">
                    	<c:forEach items="${list_product }" var="product"> 
-                   		 <li> <a href="${ctx }/product/productDetail.do?pid=${product.productId}" class="qwe">${product.productTitle}</a> </li>
+                   		 <li> <a href="${ctx }/product/productDetail.do?pid=${product.productId}" class="asd">${product.productTitle}</a> </li>
                    	</c:forEach>
                 </ul>
               </li>
