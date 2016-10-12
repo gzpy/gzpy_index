@@ -127,7 +127,7 @@
             </div>
         </div>
     </div>
-	 <div id="Div3" style="width:1200px;text-align:center;margin:5px auto;">
+	<div id="Div3" style="width:1200px;text-align:center;margin:5px auto;">
         <div class="hot-event">
         	<div class="event-item">
                 <a target="_blank" href="${ctx }/product/productDetail.do?pn=96119" class="banner">
@@ -217,13 +217,18 @@
 		</div>
 	  </div>
     </div>
-	<div id="Div3" style="width:1200px;margin:5px auto;text-align: center;">
-	 	<c:forEach items="${list_ad }" var="ad" begin="0" end="3" step="1">
-	 	<c:if test="${ad.imagePath!=null }">
-	  		<a href="${ad.adLink }" target="_blank"><img src="/gzpy_manage${ad.imagePath}" class="photo" style="margin:0 0 0 10px;width:20%; height: 100px;" alt="banner" /></a>
-	  	</c:if>
-	  	</c:forEach>   
-	 </div>
+	<div id="Div3" style="width:1150px;margin:5px auto;text-align: center;">
+		<div style="float:left;margin-bottom: 10px;">
+			<img src="${ctx }/css_files/ad_title.jpg" border="0"/>
+		</div>
+		<div style="float:left;">
+			<c:forEach items="${list_ad }" var="ad" begin="0" end="3" step="1">
+		 	<c:if test="${ad.imagePath!=null }">
+		  		<a href="${ad.adLink }" target="_blank"><img src="/gzpy_manage${ad.imagePath}" class="photo" style="margin:0 0 0 5px;width:120px; height: 50px;" alt="banner" /></a>
+		  	</c:if>
+	  		</c:forEach> 
+		</div>  
+	</div>
 	<div class="foot">
 		<div class="foot_text">
 	   	 	Copyright(C)2013-2016 广州品韵信息科技有限公司 版权所有 粤ICP备16089509号
